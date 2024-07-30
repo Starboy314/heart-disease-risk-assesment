@@ -1,0 +1,339 @@
+Delivered-To: sreemurugansj@gmail.com
+Received: by 2002:a59:cac7:0:b0:484:7210:1d5 with SMTP id q7csp2365696vqu;
+        Mon, 29 Jul 2024 23:09:46 -0700 (PDT)
+X-Received: by 2002:a17:90b:4c42:b0:2c4:af69:5c39 with SMTP id 98e67ed59e1d1-2cf7e1c1adbmr12616758a91.13.1722319786227;
+        Mon, 29 Jul 2024 23:09:46 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1722319786; cv=none;
+        d=google.com; s=arc-20160816;
+        b=vumzhYZsRWEwkjeiLWSf4Yh6YDQ0/6T0wA/b4Z/P1hES9GZzOkyF6kNrU3950nGnjF
+         HSgo+P/LOmBg1q+6HFC9NkKkpBk3TWV6vQILhtbABZYSGiMTfufrXxTwnC8HAvrk9GJO
+         jGNPMk51Clh5J89vvJGp3OoMpINnf19V/XECgqmKJFH0oHiTjhcoli8sc8EJJOTYA++T
+         ILSqnKjMfYhM3Rya5SvUWeFeoGYXfRzHKFQ8sBl8LeqODP73mVPXMyeqswxHK7Jy9Tub
+         /1MUBIwqI0G+pOGdrBHAx4VN/3RVsNEwlMyeepVY1JaTIWaGQhWI13V1bWgcXtI/BOf5
+         wqkg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=rhepy+OoDcJSavMHgkvZlaIkE4bI2moMPC6sTCNo+b4=;
+        fh=xpO/aSNKoEi8KlGyRtMOh7HO+jAlqD4EO898dWe4+28=;
+        b=UD0MzF+RImrQLfL946YLaVxC8UYInzUXHP6sqM+Z21y3ltSLrPE2+3+v8xrEvF1ocB
+         hpKubyQM2imGSW55fGMhMh4F8IV9ikWYtTwHJ39LvWceTMN28LO4XR7JX31ExVCqeSqy
+         7B/OrWOzmZHh/Nbq2KWcWRzBW8F/I1oem1wMweNUKMbZy1SRCDTdtIVwvtAZMiGWzSWP
+         xsjulryekDu5mzQDvgNZOLh4kgO61UMDba9rubkCk9W5J2t7C82U/sxzr1YjDTqMs9XM
+         Wvgc4StlMgIl7pFY6YL+PoAhf2mY8UKU+Dz/TuMGpEySH+LzqDlFuec5WT/m0u3Prq3I
+         TWog==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=AHWphqgY;
+       spf=pass (google.com: domain of abaranjivedhaselvam@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=abaranjivedhaselvam@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <abaranjivedhaselvam@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id 98e67ed59e1d1-2cf2bcd9fc9sor7267372a91.6.2024.07.29.23.09.46
+        for <sreemurugansj@gmail.com>
+        (Google Transport Security);
+        Mon, 29 Jul 2024 23:09:46 -0700 (PDT)
+Received-SPF: pass (google.com: domain of abaranjivedhaselvam@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=AHWphqgY;
+       spf=pass (google.com: domain of abaranjivedhaselvam@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=abaranjivedhaselvam@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1722319785; x=1722924585; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=rhepy+OoDcJSavMHgkvZlaIkE4bI2moMPC6sTCNo+b4=;
+        b=AHWphqgY0okD1RsYHquuVu5orrajHX1e9G0YI6JGVLa/v6Xh2zFgN7ii5tCDdTqAgl
+         cTDZOFzkKj9bPiOHpZztfBaFYccqb5ha3LUGT2wOUKHo+4S0vHRolK/kpDf46oNu6rjN
+         o7rMkdj4UYsQOqUxHFSiQ/EE3ZelIhUE44y1SQs1IRaFz9OxrHdD33+I2GUcEeZzBpmg
+         CKSJgDMq2OTbKOCO9i/eCAy9NBVWE6G0Y+xkGSt0xBL/jxuumGC4qZ/mFDjPhL50opQ7
+         uPGCaK+RzHqRDOjMupkZvxrIGPxx7EgjJKB16v1IwpBcXe0FYZRC0i3scWJCRzGkP/2g
+         2lqA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1722319785; x=1722924585;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=rhepy+OoDcJSavMHgkvZlaIkE4bI2moMPC6sTCNo+b4=;
+        b=o2yj4/CzRQ7Uy7pFaosNdWAwI7BjrT/dKRHYR5Ezg76lPmuggAxG6gEeNmRxZF1/LW
+         2J0mJ0sctMJ2cm68gtqOgQ2tbzTA4njiDvCehNPqJc6uzI6is5qKayTA4FGc4oqWQZjU
+         eCgBpDlZ1nm1sCauZx85wALZjfy+Fn5xA4iL/L2TTJy0iQa2ckDvFgGjP0hXLTmWc88Z
+         36DurltVm/6W0L5y51lq2TPsLCiSe9e9QBGS45EBL79wT4reLbaCyqA3ufdflOEVcRQX
+         MVJyooMc31KcK53H91oSH8Aj0wd4Muf2g6Z99oDjIabbtlof/lIJUBZ6VHJ10L45ZiFb
+         Nj/g==
+X-Gm-Message-State: AOJu0YxqYafT5jKj5qa/1UyiI4YjGlhqS9nEXt4If+vvfRIlD9o3+srH
+	Oxmw9W1Yt6FiiOIyPGsLTVLFv+LnftIYSAx0bQnN7cs0EjIO7c6yo+SNhCv+eYdcnz8a2mZsUMv
+	iwIyek4EZ5Ws3VGtDaJh44gJPnmFK6ihg
+X-Google-Smtp-Source: AGHT+IH9ldKzt+qxAGi9E4f8Y4yrYvGyU42XHfZZdG6PGMv5cFRD4LTDqcvZFyi9nycfbqH9L9ww5qSvEx+qZdf0rB8=
+X-Received: by 2002:a17:90a:468d:b0:2c9:95c7:7521 with SMTP id
+ 98e67ed59e1d1-2cf7e09819cmr11712408a91.1.1722319785584; Mon, 29 Jul 2024
+ 23:09:45 -0700 (PDT)
+MIME-Version: 1.0
+From: Abaranji Vedha S S <abaranjivedhaselvam@gmail.com>
+Date: Tue, 30 Jul 2024 11:39:34 +0530
+Message-ID: <CAK7PsTiAkEfcdmR2ksfo=3G1a2W9ChoXV0y4eh-ekvF+j03w=A@mail.gmail.com>
+Subject: app1.py
+To: Sree Murugan S J <sreemurugansj@gmail.com>
+Content-Type: multipart/alternative; boundary="0000000000000270ff061e70d3f2"
+
+--0000000000000270ff061e70d3f2
+Content-Type: text/plain; charset="UTF-8"
+
+import streamlit as st
+import joblib
+import numpy as np
+
+# Load the trained model
+model = joblib.load('heart_disease_model.pkl')
+
+# Define the Streamlit app
+st.title("Heart Disease Risk Assessment")
+
+st.write("""
+### Enter your health metrics to predict the risk of heart disease:
+""")
+
+# Define input fields
+age = st.number_input("Age", min_value=0, max_value=120, value=30)
+sex = st.selectbox("Sex", [0, 1], format_func=lambda x: 'Male' if x == 1
+else 'Female')
+cp = st.number_input("Chest Pain Type (0-3)", min_value=0, max_value=3,
+value=0)
+trestbps = st.number_input("Resting Blood Pressure", min_value=0, max_value=
+200, value=120)
+chol = st.number_input("Serum Cholestoral in mg/dl", min_value=0, max_value=
+600, value=200)
+fbs = st.selectbox("Fasting Blood Sugar > 120 mg/dl", [0, 1], format_func=
+lambda x: 'True' if x == 1 else 'False')
+restecg = st.number_input("Resting Electrocardiographic Results (0-2)",
+min_value=0, max_value=2, value=0)
+thalach = st.number_input("Maximum Heart Rate Achieved", min_value=0,
+max_value=220, value=150)
+exang = st.selectbox("Exercise Induced Angina", [0, 1], format_func=lambda x:
+'Yes' if x == 1 else 'No')
+oldpeak = st.number_input("ST Depression Induced by Exercise", min_value=0.0,
+max_value=10.0, value=1.0)
+slope = st.number_input("Slope of the Peak Exercise ST Segment (0-2)",
+min_value=0, max_value=2, value=0)
+ca = st.number_input("Number of Major Vessels (0-3)", min_value=0, max_value
+=3, value=0)
+thal = st.number_input("Thal (1-3)", min_value=1, max_value=3, value=1)
+
+# When the user clicks the "Predict" button
+if st.button("Predict"):
+    input_data = np.array([[age, sex, cp, trestbps, chol, fbs, restecg,
+thalach, exang, oldpeak, slope, ca, thal]])
+    prediction = model.predict(input_data)
+    risk = 'High' if prediction[0] == 1 else 'Low'
+
+    st.write(f"### Predicted Risk of Heart Disease: {risk}")
+
+# Run the app with: streamlit run app.py
+
+--0000000000000270ff061e70d3f2
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div style=3D"color:rgb(255,255,255);background-color:rgb(=
+0,0,0);font-family:Consolas,&quot;Courier New&quot;,monospace;font-size:14p=
+x;line-height:19px;white-space:pre"><div><span style=3D"color:rgb(197,134,1=
+92)">import</span> <span style=3D"color:rgb(78,201,176)">streamlit</span> <=
+span style=3D"color:rgb(197,134,192)">as</span> <span style=3D"color:rgb(78=
+,201,176)">st</span></div><div><span style=3D"color:rgb(197,134,192)">impor=
+t</span> <span style=3D"color:rgb(78,201,176)">joblib</span></div><div><spa=
+n style=3D"color:rgb(197,134,192)">import</span> <span style=3D"color:rgb(7=
+8,201,176)">numpy</span> <span style=3D"color:rgb(197,134,192)">as</span> <=
+span style=3D"color:rgb(78,201,176)">np</span></div><br><div><span style=3D=
+"color:rgb(124,166,104)"># Load the trained model</span></div><div><span st=
+yle=3D"color:rgb(156,220,254)">model</span> <span style=3D"color:rgb(212,21=
+2,212)">=3D</span> <span style=3D"color:rgb(78,201,176)">joblib</span>.<spa=
+n style=3D"color:rgb(220,220,170)">load</span>(<span style=3D"color:rgb(206=
+,145,120)">&#39;heart_disease_model.pkl&#39;</span>)</div><br><div><span st=
+yle=3D"color:rgb(124,166,104)"># Define the Streamlit app</span></div><div>=
+<span style=3D"color:rgb(78,201,176)">st</span>.<span style=3D"color:rgb(15=
+6,220,254)">title</span>(<span style=3D"color:rgb(206,145,120)">&quot;Heart=
+ Disease Risk Assessment&quot;</span>)</div><br><div><span style=3D"color:r=
+gb(78,201,176)">st</span>.<span style=3D"color:rgb(156,220,254)">write</spa=
+n>(<span style=3D"color:rgb(206,145,120)">&quot;&quot;&quot;</span></div><d=
+iv><span style=3D"color:rgb(206,145,120)">### Enter your health metrics to =
+predict the risk of heart disease:</span></div><div><span style=3D"color:rg=
+b(206,145,120)">&quot;&quot;&quot;</span>)</div><br><div><span style=3D"col=
+or:rgb(124,166,104)"># Define input fields</span></div><div><span style=3D"=
+color:rgb(156,220,254)">age</span> <span style=3D"color:rgb(212,212,212)">=
+=3D</span> <span style=3D"color:rgb(78,201,176)">st</span>.<span style=3D"c=
+olor:rgb(156,220,254)">number_input</span>(<span style=3D"color:rgb(206,145=
+,120)">&quot;Age&quot;</span>, <span style=3D"color:rgb(156,220,254)">min_v=
+alue</span><span style=3D"color:rgb(212,212,212)">=3D</span><span style=3D"=
+color:rgb(181,206,168)">0</span>, <span style=3D"color:rgb(156,220,254)">ma=
+x_value</span><span style=3D"color:rgb(212,212,212)">=3D</span><span style=
+=3D"color:rgb(181,206,168)">120</span>, <span style=3D"color:rgb(156,220,25=
+4)">value</span><span style=3D"color:rgb(212,212,212)">=3D</span><span styl=
+e=3D"color:rgb(181,206,168)">30</span>)</div><div><span style=3D"color:rgb(=
+156,220,254)">sex</span> <span style=3D"color:rgb(212,212,212)">=3D</span> =
+<span style=3D"color:rgb(78,201,176)">st</span>.<span style=3D"color:rgb(15=
+6,220,254)">selectbox</span>(<span style=3D"color:rgb(206,145,120)">&quot;S=
+ex&quot;</span>, [<span style=3D"color:rgb(181,206,168)">0</span>, <span st=
+yle=3D"color:rgb(181,206,168)">1</span>], <span style=3D"color:rgb(156,220,=
+254)">format_func</span><span style=3D"color:rgb(212,212,212)">=3D</span><s=
+pan style=3D"color:rgb(86,156,214)">lambda</span> <span style=3D"color:rgb(=
+156,220,254)">x</span>: <span style=3D"color:rgb(206,145,120)">&#39;Male&#3=
+9;</span> <span style=3D"color:rgb(197,134,192)">if</span> <span style=3D"c=
+olor:rgb(156,220,254)">x</span> <span style=3D"color:rgb(212,212,212)">=3D=
+=3D</span> <span style=3D"color:rgb(181,206,168)">1</span> <span style=3D"c=
+olor:rgb(197,134,192)">else</span> <span style=3D"color:rgb(206,145,120)">&=
+#39;Female&#39;</span>)</div><div><span style=3D"color:rgb(156,220,254)">cp=
+</span> <span style=3D"color:rgb(212,212,212)">=3D</span> <span style=3D"co=
+lor:rgb(78,201,176)">st</span>.<span style=3D"color:rgb(156,220,254)">numbe=
+r_input</span>(<span style=3D"color:rgb(206,145,120)">&quot;Chest Pain Type=
+ (0-3)&quot;</span>, <span style=3D"color:rgb(156,220,254)">min_value</span=
+><span style=3D"color:rgb(212,212,212)">=3D</span><span style=3D"color:rgb(=
+181,206,168)">0</span>, <span style=3D"color:rgb(156,220,254)">max_value</s=
+pan><span style=3D"color:rgb(212,212,212)">=3D</span><span style=3D"color:r=
+gb(181,206,168)">3</span>, <span style=3D"color:rgb(156,220,254)">value</sp=
+an><span style=3D"color:rgb(212,212,212)">=3D</span><span style=3D"color:rg=
+b(181,206,168)">0</span>)</div><div><span style=3D"color:rgb(156,220,254)">=
+trestbps</span> <span style=3D"color:rgb(212,212,212)">=3D</span> <span sty=
+le=3D"color:rgb(78,201,176)">st</span>.<span style=3D"color:rgb(156,220,254=
+)">number_input</span>(<span style=3D"color:rgb(206,145,120)">&quot;Resting=
+ Blood Pressure&quot;</span>, <span style=3D"color:rgb(156,220,254)">min_va=
+lue</span><span style=3D"color:rgb(212,212,212)">=3D</span><span style=3D"c=
+olor:rgb(181,206,168)">0</span>, <span style=3D"color:rgb(156,220,254)">max=
+_value</span><span style=3D"color:rgb(212,212,212)">=3D</span><span style=
+=3D"color:rgb(181,206,168)">200</span>, <span style=3D"color:rgb(156,220,25=
+4)">value</span><span style=3D"color:rgb(212,212,212)">=3D</span><span styl=
+e=3D"color:rgb(181,206,168)">120</span>)</div><div><span style=3D"color:rgb=
+(156,220,254)">chol</span> <span style=3D"color:rgb(212,212,212)">=3D</span=
+> <span style=3D"color:rgb(78,201,176)">st</span>.<span style=3D"color:rgb(=
+156,220,254)">number_input</span>(<span style=3D"color:rgb(206,145,120)">&q=
+uot;Serum Cholestoral in mg/dl&quot;</span>, <span style=3D"color:rgb(156,2=
+20,254)">min_value</span><span style=3D"color:rgb(212,212,212)">=3D</span><=
+span style=3D"color:rgb(181,206,168)">0</span>, <span style=3D"color:rgb(15=
+6,220,254)">max_value</span><span style=3D"color:rgb(212,212,212)">=3D</spa=
+n><span style=3D"color:rgb(181,206,168)">600</span>, <span style=3D"color:r=
+gb(156,220,254)">value</span><span style=3D"color:rgb(212,212,212)">=3D</sp=
+an><span style=3D"color:rgb(181,206,168)">200</span>)</div><div><span style=
+=3D"color:rgb(156,220,254)">fbs</span> <span style=3D"color:rgb(212,212,212=
+)">=3D</span> <span style=3D"color:rgb(78,201,176)">st</span>.<span style=
+=3D"color:rgb(156,220,254)">selectbox</span>(<span style=3D"color:rgb(206,1=
+45,120)">&quot;Fasting Blood Sugar &gt; 120 mg/dl&quot;</span>, [<span styl=
+e=3D"color:rgb(181,206,168)">0</span>, <span style=3D"color:rgb(181,206,168=
+)">1</span>], <span style=3D"color:rgb(156,220,254)">format_func</span><spa=
+n style=3D"color:rgb(212,212,212)">=3D</span><span style=3D"color:rgb(86,15=
+6,214)">lambda</span> <span style=3D"color:rgb(156,220,254)">x</span>: <spa=
+n style=3D"color:rgb(206,145,120)">&#39;True&#39;</span> <span style=3D"col=
+or:rgb(197,134,192)">if</span> <span style=3D"color:rgb(156,220,254)">x</sp=
+an> <span style=3D"color:rgb(212,212,212)">=3D=3D</span> <span style=3D"col=
+or:rgb(181,206,168)">1</span> <span style=3D"color:rgb(197,134,192)">else</=
+span> <span style=3D"color:rgb(206,145,120)">&#39;False&#39;</span>)</div><=
+div><span style=3D"color:rgb(156,220,254)">restecg</span> <span style=3D"co=
+lor:rgb(212,212,212)">=3D</span> <span style=3D"color:rgb(78,201,176)">st</=
+span>.<span style=3D"color:rgb(156,220,254)">number_input</span>(<span styl=
+e=3D"color:rgb(206,145,120)">&quot;Resting Electrocardiographic Results (0-=
+2)&quot;</span>, <span style=3D"color:rgb(156,220,254)">min_value</span><sp=
+an style=3D"color:rgb(212,212,212)">=3D</span><span style=3D"color:rgb(181,=
+206,168)">0</span>, <span style=3D"color:rgb(156,220,254)">max_value</span>=
+<span style=3D"color:rgb(212,212,212)">=3D</span><span style=3D"color:rgb(1=
+81,206,168)">2</span>, <span style=3D"color:rgb(156,220,254)">value</span><=
+span style=3D"color:rgb(212,212,212)">=3D</span><span style=3D"color:rgb(18=
+1,206,168)">0</span>)</div><div><span style=3D"color:rgb(156,220,254)">thal=
+ach</span> <span style=3D"color:rgb(212,212,212)">=3D</span> <span style=3D=
+"color:rgb(78,201,176)">st</span>.<span style=3D"color:rgb(156,220,254)">nu=
+mber_input</span>(<span style=3D"color:rgb(206,145,120)">&quot;Maximum Hear=
+t Rate Achieved&quot;</span>, <span style=3D"color:rgb(156,220,254)">min_va=
+lue</span><span style=3D"color:rgb(212,212,212)">=3D</span><span style=3D"c=
+olor:rgb(181,206,168)">0</span>, <span style=3D"color:rgb(156,220,254)">max=
+_value</span><span style=3D"color:rgb(212,212,212)">=3D</span><span style=
+=3D"color:rgb(181,206,168)">220</span>, <span style=3D"color:rgb(156,220,25=
+4)">value</span><span style=3D"color:rgb(212,212,212)">=3D</span><span styl=
+e=3D"color:rgb(181,206,168)">150</span>)</div><div><span style=3D"color:rgb=
+(156,220,254)">exang</span> <span style=3D"color:rgb(212,212,212)">=3D</spa=
+n> <span style=3D"color:rgb(78,201,176)">st</span>.<span style=3D"color:rgb=
+(156,220,254)">selectbox</span>(<span style=3D"color:rgb(206,145,120)">&quo=
+t;Exercise Induced Angina&quot;</span>, [<span style=3D"color:rgb(181,206,1=
+68)">0</span>, <span style=3D"color:rgb(181,206,168)">1</span>], <span styl=
+e=3D"color:rgb(156,220,254)">format_func</span><span style=3D"color:rgb(212=
+,212,212)">=3D</span><span style=3D"color:rgb(86,156,214)">lambda</span> <s=
+pan style=3D"color:rgb(156,220,254)">x</span>: <span style=3D"color:rgb(206=
+,145,120)">&#39;Yes&#39;</span> <span style=3D"color:rgb(197,134,192)">if</=
+span> <span style=3D"color:rgb(156,220,254)">x</span> <span style=3D"color:=
+rgb(212,212,212)">=3D=3D</span> <span style=3D"color:rgb(181,206,168)">1</s=
+pan> <span style=3D"color:rgb(197,134,192)">else</span> <span style=3D"colo=
+r:rgb(206,145,120)">&#39;No&#39;</span>)</div><div><span style=3D"color:rgb=
+(156,220,254)">oldpeak</span> <span style=3D"color:rgb(212,212,212)">=3D</s=
+pan> <span style=3D"color:rgb(78,201,176)">st</span>.<span style=3D"color:r=
+gb(156,220,254)">number_input</span>(<span style=3D"color:rgb(206,145,120)"=
+>&quot;ST Depression Induced by Exercise&quot;</span>, <span style=3D"color=
+:rgb(156,220,254)">min_value</span><span style=3D"color:rgb(212,212,212)">=
+=3D</span><span style=3D"color:rgb(181,206,168)">0.0</span>, <span style=3D=
+"color:rgb(156,220,254)">max_value</span><span style=3D"color:rgb(212,212,2=
+12)">=3D</span><span style=3D"color:rgb(181,206,168)">10.0</span>, <span st=
+yle=3D"color:rgb(156,220,254)">value</span><span style=3D"color:rgb(212,212=
+,212)">=3D</span><span style=3D"color:rgb(181,206,168)">1.0</span>)</div><d=
+iv><span style=3D"color:rgb(156,220,254)">slope</span> <span style=3D"color=
+:rgb(212,212,212)">=3D</span> <span style=3D"color:rgb(78,201,176)">st</spa=
+n>.<span style=3D"color:rgb(156,220,254)">number_input</span>(<span style=
+=3D"color:rgb(206,145,120)">&quot;Slope of the Peak Exercise ST Segment (0-=
+2)&quot;</span>, <span style=3D"color:rgb(156,220,254)">min_value</span><sp=
+an style=3D"color:rgb(212,212,212)">=3D</span><span style=3D"color:rgb(181,=
+206,168)">0</span>, <span style=3D"color:rgb(156,220,254)">max_value</span>=
+<span style=3D"color:rgb(212,212,212)">=3D</span><span style=3D"color:rgb(1=
+81,206,168)">2</span>, <span style=3D"color:rgb(156,220,254)">value</span><=
+span style=3D"color:rgb(212,212,212)">=3D</span><span style=3D"color:rgb(18=
+1,206,168)">0</span>)</div><div><span style=3D"color:rgb(156,220,254)">ca</=
+span> <span style=3D"color:rgb(212,212,212)">=3D</span> <span style=3D"colo=
+r:rgb(78,201,176)">st</span>.<span style=3D"color:rgb(156,220,254)">number_=
+input</span>(<span style=3D"color:rgb(206,145,120)">&quot;Number of Major V=
+essels (0-3)&quot;</span>, <span style=3D"color:rgb(156,220,254)">min_value=
+</span><span style=3D"color:rgb(212,212,212)">=3D</span><span style=3D"colo=
+r:rgb(181,206,168)">0</span>, <span style=3D"color:rgb(156,220,254)">max_va=
+lue</span><span style=3D"color:rgb(212,212,212)">=3D</span><span style=3D"c=
+olor:rgb(181,206,168)">3</span>, <span style=3D"color:rgb(156,220,254)">val=
+ue</span><span style=3D"color:rgb(212,212,212)">=3D</span><span style=3D"co=
+lor:rgb(181,206,168)">0</span>)</div><div><span style=3D"color:rgb(156,220,=
+254)">thal</span> <span style=3D"color:rgb(212,212,212)">=3D</span> <span s=
+tyle=3D"color:rgb(78,201,176)">st</span>.<span style=3D"color:rgb(156,220,2=
+54)">number_input</span>(<span style=3D"color:rgb(206,145,120)">&quot;Thal =
+(1-3)&quot;</span>, <span style=3D"color:rgb(156,220,254)">min_value</span>=
+<span style=3D"color:rgb(212,212,212)">=3D</span><span style=3D"color:rgb(1=
+81,206,168)">1</span>, <span style=3D"color:rgb(156,220,254)">max_value</sp=
+an><span style=3D"color:rgb(212,212,212)">=3D</span><span style=3D"color:rg=
+b(181,206,168)">3</span>, <span style=3D"color:rgb(156,220,254)">value</spa=
+n><span style=3D"color:rgb(212,212,212)">=3D</span><span style=3D"color:rgb=
+(181,206,168)">1</span>)</div><br><div><span style=3D"color:rgb(124,166,104=
+)"># When the user clicks the &quot;Predict&quot; button</span></div><div><=
+span style=3D"color:rgb(197,134,192)">if</span> <span style=3D"color:rgb(78=
+,201,176)">st</span>.<span style=3D"color:rgb(156,220,254)">button</span>(<=
+span style=3D"color:rgb(206,145,120)">&quot;Predict&quot;</span>):</div><di=
+v>=C2=A0 =C2=A0 <span style=3D"color:rgb(156,220,254)">input_data</span> <s=
+pan style=3D"color:rgb(212,212,212)">=3D</span> <span style=3D"color:rgb(78=
+,201,176)">np</span>.<span style=3D"color:rgb(220,220,170)">array</span>([[=
+<span style=3D"color:rgb(156,220,254)">age</span>, <span style=3D"color:rgb=
+(156,220,254)">sex</span>, <span style=3D"color:rgb(156,220,254)">cp</span>=
+, <span style=3D"color:rgb(156,220,254)">trestbps</span>, <span style=3D"co=
+lor:rgb(156,220,254)">chol</span>, <span style=3D"color:rgb(156,220,254)">f=
+bs</span>, <span style=3D"color:rgb(156,220,254)">restecg</span>, <span sty=
+le=3D"color:rgb(156,220,254)">thalach</span>, <span style=3D"color:rgb(156,=
+220,254)">exang</span>, <span style=3D"color:rgb(156,220,254)">oldpeak</spa=
+n>, <span style=3D"color:rgb(156,220,254)">slope</span>, <span style=3D"col=
+or:rgb(156,220,254)">ca</span>, <span style=3D"color:rgb(156,220,254)">thal=
+</span>]])</div><div>=C2=A0 =C2=A0 <span style=3D"color:rgb(156,220,254)">p=
+rediction</span> <span style=3D"color:rgb(212,212,212)">=3D</span> <span st=
+yle=3D"color:rgb(156,220,254)">model</span>.predict(<span style=3D"color:rg=
+b(156,220,254)">input_data</span>)</div><div>=C2=A0 =C2=A0 <span style=3D"c=
+olor:rgb(156,220,254)">risk</span> <span style=3D"color:rgb(212,212,212)">=
+=3D</span> <span style=3D"color:rgb(206,145,120)">&#39;High&#39;</span> <sp=
+an style=3D"color:rgb(197,134,192)">if</span> <span style=3D"color:rgb(156,=
+220,254)">prediction</span>[<span style=3D"color:rgb(181,206,168)">0</span>=
+] <span style=3D"color:rgb(212,212,212)">=3D=3D</span> <span style=3D"color=
+:rgb(181,206,168)">1</span> <span style=3D"color:rgb(197,134,192)">else</sp=
+an> <span style=3D"color:rgb(206,145,120)">&#39;Low&#39;</span></div><div>=
+=C2=A0 =C2=A0 </div><div>=C2=A0 =C2=A0 <span style=3D"color:rgb(78,201,176)=
+">st</span>.<span style=3D"color:rgb(156,220,254)">write</span>(<span style=
+=3D"color:rgb(86,156,214)">f</span><span style=3D"color:rgb(206,145,120)">&=
+quot;### Predicted Risk of Heart Disease: </span><span style=3D"color:rgb(8=
+6,156,214)">{</span><span style=3D"color:rgb(156,220,254)">risk</span><span=
+ style=3D"color:rgb(86,156,214)">}</span><span style=3D"color:rgb(206,145,1=
+20)">&quot;</span>)</div><br><div><span style=3D"color:rgb(124,166,104)"># =
+Run the app with: streamlit run app.py</span></div><br></div></div>
+
+--0000000000000270ff061e70d3f2--
